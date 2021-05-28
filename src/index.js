@@ -44,7 +44,7 @@ if (fs.existsSync(filename)) {
     const revertIndex = logBlocksData.findIndex(({ ver }) => ver === versionStr);
     if (revertIndex > -1) {
       const revertLogBlocks = logBlocks.slice(0, revertIndex + 1);
-      const revertedChangelog = changelog.replace(revertLogBlocks.join(''), '');
+      const revertedChangelog = revertLogBlocks.length === logBlocks.length ? '' : changelog.replace(revertLogBlocks.join(''), '');
       fs.writeFileSync(filename, revertedChangelog);
     }
   }
