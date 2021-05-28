@@ -1,6 +1,6 @@
 {
   "name": "@z1c1/revert-changelog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A script for reverting change log to set version. Only tested when using `standard-version` to generate change log.",
   "keywords": [],
   "homepage": "https://github.com/z1c1/revert-changelog",
