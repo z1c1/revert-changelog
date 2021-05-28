@@ -1,0 +1,61 @@
+{
+  "name": "@z1c1/revert-changelog",
+  "version": "0.1.0",
+  "description": "A script for reverting change log to set version. Only tested when using `standard-version` to generate change log.",
+  "keywords": [],
+  "homepage": "https://github.com/z1c1/revert-changelog",
+  "bugs": {
+    "url": "https://github.com/z1c1/revert-changelog/#issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:z1c1/revert-changelog.git"
+  },
+  "license": "MIT",
+  "author": "John Chan",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "bin": {
+    "revert-changelog": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "",
+    "prepare": "npm run build",
+    "prebuild": "npm run clean",
+    "build": "rollup -c",
+    "release": "standard-version && npm publish --access public",
+    "postrelease": "npm run push",
+    "release:first": "standard-version --first-release && npm publish --access public",
+    "postrelease:first": "git push -u origin master && git push origin --tags",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist",
+    "release:minor": "standard-version --release-as minor && npm publish --access public",
+    "postrelease:minor": "npm run push",
+    "release:major": "standard-version --release-as major && npm publish --access public",
+    "postrelease:major": "npm run push",
+    "release:pre": "npm run release:alpha",
+    "release:alpha": "standard-version --prerelease alpha && npm publish --access public --tag next",
+    "postrelease:alpha": "npm run push",
+    "release:beta": "standard-version --prerelease beta && npm publish --access public --tag next",
+    "postrelease:beta": "npm run push",
+    "push": "git push && git push origin --tags"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@rollup/plugin-babel": "^5.3.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.45.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "standard-version": "^9.1.1"
+  },
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6"
+  }
+}
