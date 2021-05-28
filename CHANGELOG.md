@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/z1c1/revert-changelog/compare/v0.1.1...v0.1.2) (2021-05-28)
+
+
+### Bug Fixes
+
+* changelog content error when revert to the last log version ([c5f8193](https://github.com/z1c1/revert-changelog/commit/c5f81935cf6d92f95b74266e384866bb05864528))
+
 ### [0.1.1](https://github.com/z1c1/revert-changelog/compare/v0.1.0...v0.1.1) (2021-05-28)
 
 
