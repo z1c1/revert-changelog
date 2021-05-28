@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 
 let [_1, _2, versionStr, filename] = process.argv;
